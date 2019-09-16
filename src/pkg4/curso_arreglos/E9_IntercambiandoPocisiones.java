@@ -21,27 +21,31 @@ public class E9_IntercambiandoPocisiones {
     public static void main(String args[]){
         Scanner input=new Scanner(System.in);
         
-        int array[]=new int[5];
-        int ultimo=0;
+        int array[]=new int[10];
+        int copia[]=new int[10];
+        int last=0;
         
         
         System.out.println("***ENTER THE DATA***");
-        for(int index=0;index<5;index++){
+        for(int index=0;index<array.length;index++){
             System.out.print((index+1)+". Enter a number: ");
             array[index]=input.nextInt();
         }
         
-        int temporal;
-        for(int index=0;index<=4;index++){
-            ultimo=array[4];
-            temporal=array[index];
-            array[index+1]=array[index];
-            
-            
+        last=array[9];
+        for(int index=0;index<=8;index++){
+            copia[index+1]=array[index];    
         }
+        //true solution
+        /*for(i=8;i>=0;i++){
+        array[index+1]=array[index]
+        */
         
-        for(int index=0;index<=4;index++){
-            System.out.println(array[index]);
+        copia[0]=last;       
+        
+        System.out.println("***SOLUTION**");
+        for(int index=0;index<copia.length;index++){
+            System.out.println((index+1)+".- "+copia[index]);
         }
         
         
