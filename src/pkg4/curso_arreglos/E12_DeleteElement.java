@@ -20,7 +20,7 @@ public class E12_DeleteElement {
         Scanner input=new Scanner(System.in);
         
         int array[]=new int[5];
-        int one=1, position;
+        int one=1, position, limI=0, limS=4;
         
         System.out.println("**ENTER THE DATA**");
         for(int index=0;index<array.length;index++){
@@ -32,15 +32,15 @@ public class E12_DeleteElement {
         do{
             System.out.println("Enter a position from 0 to 4: ");
             position=input.nextInt();
-        }while(position<0 || position>4);
+        }while(position<limI || position>limS);
         
       
-        for(int index=position;index<=3;index++){
-            array[index]=array[index+1];
+        for(int index=position;index<array.length-one;index++){
+            array[index]=array[index+one];
         }
     
         System.out.println("**RESULT**");
-        for(int index=0;index<array.length-1;index++){
+        for(int index=0;index<array.length-one;index++){
             System.out.println(array[index]);
         }
     
