@@ -35,27 +35,30 @@ public class E13_OddAndEven {
         int arrayEven[]=new int[countE];
         
         
-        int x=0, contNu=0, cont=0;
+        int indexOdd=0, indexEven=0;
         for(int index=0;index<array.length;index++){
             if((array[index]%2)==0){
-                arrayOdd[index]=array[index];
-                System.out.println("eres par"+ arrayOdd[index]);
+                arrayOdd[indexOdd]=array[index];
+                indexOdd++;
+                //System.out.println("eres par"+ arrayOdd[index]);
                 
             }else{
-                arrayEven[index]=array[index];
-                System.out.println("eres inpar"+ arrayEven[index]);
-                x++;
+                arrayEven[indexEven]=array[index];
+                //System.out.println("eres inpar"+ arrayEven[index]);
+                indexEven++;
             }
             
         }
         
+        System.out.println("***ODD NUMBERS**");
         for(int index=0;index<arrayOdd.length;index++){
-            System.out.print(arrayOdd[index]+" ");
+            System.out.print(arrayOdd[index]);
             
             
         }
+        System.out.println("**EVEN NUMBERS**");
         for(int index=0;index<arrayEven.length;index++){
-            System.out.print(arrayEven[index]+" ");
+            System.out.print(arrayEven[index]);
             
             
         }
