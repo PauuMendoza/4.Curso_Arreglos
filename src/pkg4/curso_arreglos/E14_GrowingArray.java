@@ -21,11 +21,10 @@ public class E14_GrowingArray {
         int arrayA[]=new int[5];
         int arrayB[]=new int[5];
         int arrayFinal[]=new int[10];
-        int one=1, actuallyA=0, actuallyB=0, indexA, indexB;
-        boolean solutionImpar=true;
+        int one=1, actuallyA=0, actuallyB=0;
         
         System.out.println("**ENTER THE DATA FOR THE ARRAY A**");
-        for(indexA=0;indexA<arrayA.length;indexA++){
+        for(int indexA=0;indexA<arrayA.length;indexA++){
             System.out.print((indexA+one)+". Enter the number: ");
             arrayA[indexA]=input.nextInt();
             while(arrayA[indexA]<actuallyA){
@@ -35,7 +34,7 @@ public class E14_GrowingArray {
             actuallyA=arrayA[indexA];
         }
         System.out.println("**ENTER THE DATA FOR THE ARRAY B**");
-        for(indexB=0;indexB<arrayB.length;indexB++){
+        for(int indexB=0;indexB<arrayB.length;indexB++){
             System.out.print((indexB+one)+". Enter the number: ");
             arrayB[indexB]=input.nextInt();
             while(arrayB[indexB]<actuallyB){
@@ -46,25 +45,25 @@ public class E14_GrowingArray {
         }
         
         //ORDERING THE ARRAY
-        int indexImpar=0, indexPar=0, indexFinal=0, limit=2;
+        int indexOdd=0, indexEven=0, indexFinal=0, limit=2, last_position=4;
         for(indexFinal=0;indexFinal<arrayFinal.length-limit;indexFinal++){
-            if(arrayA[indexImpar]<arrayB[indexPar]){
-                arrayFinal[indexFinal]=arrayA[indexImpar];
-                indexImpar++;
+            if(arrayA[indexOdd]<arrayB[indexEven]){
+                arrayFinal[indexFinal]=arrayA[indexOdd];
+                indexOdd++;
             }
             else{
-                arrayFinal[indexFinal]=arrayB[indexPar];
-                indexPar++;
+                arrayFinal[indexFinal]=arrayB[indexEven];
+                indexEven++;
             }
         }
         
-        if(arrayA[4]<arrayB[4]){
-            arrayFinal[indexFinal]=arrayA[4];
-            arrayFinal[indexFinal+one]=arrayB[4];
+        if(arrayA[last_position]<arrayB[last_position]){
+            arrayFinal[indexFinal]=arrayA[last_position];
+            arrayFinal[indexFinal+one]=arrayB[last_position];
         }
         else{
-            arrayFinal[indexFinal]=arrayB[4];
-            arrayFinal[indexFinal+one]=arrayA[4];
+            arrayFinal[indexFinal]=arrayB[last_position];
+            arrayFinal[indexFinal+one]=arrayA[last_position];
         }
         
         System.out.println("***RESULT***");
