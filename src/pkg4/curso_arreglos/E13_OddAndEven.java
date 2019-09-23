@@ -18,57 +18,37 @@ public class E13_OddAndEven {
         
         int array[]={1,2,3,4,5,6,7,8,9,10};
       
-        int countO=0, countE=0;
+        int countOdd=0, countEven=0, indexOdd=0, indexEven=0;
         
         for(int index=0;index<array.length;index++){
             if((array[index]%2)==0){
-                countO++;
+                countOdd++;
             }else{
-                countE++;
+                countEven++;
             }
             
         }
-        System.out.println("ODD: "+countO);
-        System.out.println("EVEN: "+countE);
         
-        int arrayOdd[]=new int[countO];
-        int arrayEven[]=new int[countE];
+        int arrayOdd[]=new int[countOdd];
+        int arrayEven[]=new int[countEven];
         
-        
-        int indexOdd=0, indexEven=0;
         for(int index=0;index<array.length;index++){
             if((array[index]%2)==0){
                 arrayOdd[indexOdd]=array[index];
                 indexOdd++;
-                //System.out.println("eres par"+ arrayOdd[index]);
-                
             }else{
                 arrayEven[indexEven]=array[index];
-                //System.out.println("eres inpar"+ arrayEven[index]);
                 indexEven++;
             }
-            
         }
         
         System.out.println("***ODD NUMBERS**");
         for(int index=0;index<arrayOdd.length;index++){
-            System.out.print(arrayOdd[index]);
-            
-            
+            System.out.print(arrayOdd[index]+",");
         }
-        System.out.println("**EVEN NUMBERS**");
+        System.out.println("\n**EVEN NUMBERS**");
         for(int index=0;index<arrayEven.length;index++){
-            System.out.print(arrayEven[index]);
-            
-            
+            System.out.print(arrayEven[index]+",");
         }
-        
-        
-        
-        
     }
-            
-    
-    
-    
 }
