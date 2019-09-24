@@ -19,7 +19,8 @@ public class E15_SearchingElement {
     public static void main(String args[]){
         Scanner input=new Scanner(System.in);
         
-        int one=1, now=0;
+        int one=1, now=0, position=0;
+        boolean solution=false, not_found=false;
         
         int array[]=new int[10];
         
@@ -39,12 +40,19 @@ public class E15_SearchingElement {
         
         for(int index=0;index<array.length;index++){
             if(array[index]==number){
-                System.out.println("lo encontramos en el indice "+index);
-                break;
+                position=index;
+                solution=true;
             }else{
-                System.out.println("ese numero no se encuentra");
+                not_found=true;
             }
         }
+        
+        if(solution){
+            System.out.println("The number exists in the index: "+position);
+        }else{
+            System.out.println("The number don`t exist in the array");
+        }
+        
         
     }
     
